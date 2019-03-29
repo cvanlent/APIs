@@ -2,26 +2,50 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>API Lecture</title>
-</head>
+	<link rel="stylesheet" href="css/style.css">
+<!-- 	<script src = "js/apis.js"></script>
+ --></head>
 <body>
 	<h1>API lecture</h1>
 	<section>
 		<h2>Twitter</h2>
-		<form>
-			<label for "twit">Twitter handle</label>
-			<input type="text" id="twit">
-			<input type="submit">
-		</form>
+
+		<!-- Select here to avoid Twitter feed -->
+		<a class="accessibility-link" href="#afterTwitterTimeline">Skip twitter timeline</a>
+		
+		<div>
+          	<h3>Twitter Feeds</h3>
+			<a class="twitter-timeline"  href="https://twitter.com/umsi?ref_src=twsrc%5Etfw"
+			data-width="55%" data-height="45vh">Tweets by umsi</a> 
+			
+			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+		</div>
+		<span id="afterTwitterTimeline" tabindex="0" title="End of twitter feed" aria-label="End of twitter timeline"></span>
 	</section>
 
 	<section>
 		<h2>Google Maps</h2>
-		<form>
-			<label for "twit">Zip code</label>
+		<!-- <form>
+			<label for ="zip">Zip code</label>
 			<input type="text" id="zip">
 			<input type="submit">
-		</form>
+		</form> -->
+		<div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.querySelector('#map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYJTDtn5CNlJu1euCXOSG4tarwCi8LqzI
+&callback=initMap"
+    async defer></script>
 	</section>
 
 	<section>
@@ -31,7 +55,7 @@
 	<section>
 		<h2>Slack</h2>
 		<form>
-			<label for "twit">Slack handle</label>
+			<label for ="slack">Slack handle</label>
 			<input type="text" id="slack">
 			<input type="submit">
 		</form>

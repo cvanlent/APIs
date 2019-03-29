@@ -1,0 +1,16 @@
+input[type="submit"]{
+	display: block
+}
+
+.accessibility-link
+{
+	margin:20px;
+	position: absolute;
+	left:-1000px;
+}
+.accessibility-link:focus{
+	left: 1000px;
+}
+#twitter{
+	margin-bottom: 20px;
+}
